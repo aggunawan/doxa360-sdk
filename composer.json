@@ -1,0 +1,33 @@
+{
+    "name": "aggunawan/doxa360-member-area-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Agung Gunawan",
+            "email": "agunggunawan.github@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Aggunawan\\Doxa360\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "test/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.4",
+        "guzzlehttp/guzzle": "^7.3",
+        "phpunit/phpunit": "^9.5",
+        "ext-json": "*"
+    }
+}
