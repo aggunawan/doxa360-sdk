@@ -4,21 +4,19 @@ namespace Aggunawan\Doxa360\Object;
 
 class Member
 {
-    protected int $id;
+    protected ?int $id = null;
 
-    protected string $name;
+    protected ?string $name = null;
 
-    protected string $email;
+    protected ?string $email = null;
 
-    protected string $phone;
+    protected ?string $phone = null;
 
-    protected int $statusCode;
+    protected int $statusCode = 1;
 
-    protected int $statusLabel;
+    protected ?int $registeredAt = null;
 
-    protected int $registeredAt;
-
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -29,7 +27,7 @@ class Member
         return $this;
     }
 
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -40,7 +38,7 @@ class Member
         return $this;
     }
 
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
@@ -51,7 +49,7 @@ class Member
         return $this;
     }
 
-    public function getPhone(): string
+    public function getPhone(): ?string
     {
         return $this->phone;
     }
@@ -62,7 +60,7 @@ class Member
         return $this;
     }
 
-    public function getStatusCode(): int
+    public function getStatusCode(): ?int
     {
         return $this->statusCode;
     }
@@ -73,18 +71,7 @@ class Member
         return $this;
     }
 
-    public function getStatusLabel(): int
-    {
-        return $this->statusLabel;
-    }
-
-    public function setStatusLabel(int $statusLabel): Member
-    {
-        $this->statusLabel = $statusLabel;
-        return $this;
-    }
-
-    public function getRegisteredAt(): int
+    public function getRegisteredAt(): ?int
     {
         return $this->registeredAt;
     }
