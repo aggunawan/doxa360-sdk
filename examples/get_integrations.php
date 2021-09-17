@@ -1,0 +1,19 @@
+<?php
+
+use Aggunawan\Doxa360\Service\IntegrationService;
+use GuzzleHttp\Exception\GuzzleException;
+
+require_once '../vendor/autoload.php';
+
+echo "Service URI : ";
+$serviceUri = trim(fgets(STDIN));
+
+$transaction = new IntegrationService();
+$transaction->setServiceUrl($serviceUri);
+
+try {
+    var_dump($transaction->getIntegrations());
+    die();
+} catch (GuzzleException $e) {
+    die();
+}
