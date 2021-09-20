@@ -9,6 +9,7 @@ class Integration
     protected string $description;
     protected string $thumbnail;
     protected bool $is_finished;
+    protected string $slug;
 
     public function getId(): int
     {
@@ -62,6 +63,17 @@ class Integration
     public function setIsFinished(bool $is_finished): Integration
     {
         $this->is_finished = $is_finished;
+        return $this;
+    }
+
+    public function getSlug(): string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): Integration
+    {
+        $this->slug = $slug;
         return $this;
     }
 }
