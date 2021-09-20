@@ -39,6 +39,7 @@ class IntegrationService extends Init
             ->setId($stdClass->id)
             ->setName($stdClass->name)
             ->setDescription($stdClass->description)
-            ->setThumbnail($stdClass->thumbnail);
+            ->setThumbnail($stdClass->thumbnail)
+            ->setIsFinished($stdClass->is_finished);
     }
 }

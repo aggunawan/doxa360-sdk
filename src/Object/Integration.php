@@ -8,6 +8,7 @@ class Integration
     protected string $name;
     protected string $description;
     protected string $thumbnail;
+    protected bool $is_finished;
 
     public function getId(): int
     {
@@ -50,6 +51,17 @@ class Integration
     public function setThumbnail(string $thumbnail): Integration
     {
         $this->thumbnail = $thumbnail;
+        return $this;
+    }
+
+    public function getIsFinished(): bool
+    {
+        return $this->is_finished;
+    }
+
+    public function setIsFinished(bool $is_finished): Integration
+    {
+        $this->is_finished = $is_finished;
         return $this;
     }
 }
