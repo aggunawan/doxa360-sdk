@@ -92,9 +92,20 @@ class Member
         return $this;
     }
 
+    public function getTypeCode(): ?int
+    {
+        return $this->typeCode;
+    }
+
     public function setTypeLabel(string $typeLabel): Member
     {
         $this->typeLabel = $typeLabel;
         return $this;
     }
+
+    public function getTypeLabel(): ?string
+    {
+        return $this->typeLabel;
+    }
+
 }
