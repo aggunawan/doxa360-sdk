@@ -3,6 +3,7 @@
 namespace Aggunawan\Doxa360\Service;
 
 use Aggunawan\Doxa360\Init;
+use Aggunawan\Doxa360\Object\Freshchat;
 use Aggunawan\Doxa360\Object\Member;
 use GuzzleHttp\Exception\GuzzleException;
 
@@ -53,5 +54,45 @@ class MemberService extends Init
         }
 
         return null;
+    }
+
+    /**
+     * @throws GuzzleException
+     */
+    public function getFreshchat(int $memberId): ?Freshchat
+    {
+        $res = $this->getHttpClient()->get("/member/$memberId/freshchat");
+        $json = json_decode($res->getBody());
+
+        return $res->getStatusCode() == 200 ?
+            ((new Freshchat())
+                ->setAccessToken($json->access_token)
+                ->setDomain($json->domain)
+                ->setAppId($json->app_id)):
+            null;
+    }
+
+    /**
+     * @throws GuzzleException
+     */
+    public function patchFreshchat(Member $member, Freshchat $freshchat): ?Freshchat
+    {
+        $res = $this->getHttpClient()
+            ->post("/member/{$member->getId()}/freshchat", [
+                'json' => [
+                    'app_id' => $freshchat->getAppId(),
+                    'domain' => $freshchat->getDomain(),
+                    'access_token' => $freshchat->getAccessToken()
+                ]
+            ]);
+
+        $json = json_decode($res->getBody());
+
+        return $res->getStatusCode() == 200 ?
+            (new Freshchat())
+                ->setAccessToken($json->access_token)
+                ->setDomain($json->domain)
+                ->setAppId($json->app_id):
+            null;
     }
 }
