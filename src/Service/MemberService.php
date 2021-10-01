@@ -46,6 +46,9 @@ class MemberService extends Init
                 ->setEmail($jsonResponse->email)
                 ->setPhone($jsonResponse->phone)
                 ->setStatusCode($jsonResponse->status)
+                ->setStatusLabel($jsonResponse->status_label)
+                ->setTypeCode($jsonResponse->type)
+                ->setTypeLabel($jsonResponse->type_label)
                 ->setRegisteredAt($jsonResponse->registered_at);
         }
 
