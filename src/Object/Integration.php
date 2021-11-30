@@ -10,7 +10,7 @@ class Integration
     protected string $thumbnail;
     protected bool $is_finished;
     protected string $slug;
-    protected ?array $requires;
+    protected ?array $requires = null;
 
     public function getId(): int
     {
