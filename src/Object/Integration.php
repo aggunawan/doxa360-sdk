@@ -10,7 +10,7 @@ class Integration
     protected string $thumbnail;
     protected bool $is_finished;
     protected string $slug;
-    protected array $requires = [];
+    protected ?array $requires;
 
     public function getId(): int
     {
@@ -78,12 +78,12 @@ class Integration
         return $this;
     }
 
-    public function getRequires(): array
+    public function getRequires(): ?array
     {
         return $this->requires;
     }
 
-    public function setRequires(array $requires): Integration
+    public function setRequires(?array $requires): Integration
     {
         $this->requires = $requires;
         return $this;
